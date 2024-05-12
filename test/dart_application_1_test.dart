@@ -1,8 +1,13 @@
-import 'package:dart_application_1/dart_application_1.dart';
 import 'package:test/test.dart';
 
+
+int calculate(int number) {
+  return number;
+}
+
+
 void main() {
-  // test('calculate', () {
-  //   expect(calculate(), 42);
-  // });
+  test('calculate', () {
+    expect(calculate(42), 42);
+  });
 }
