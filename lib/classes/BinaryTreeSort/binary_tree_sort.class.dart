@@ -1,14 +1,63 @@
 import '../Node/node.class.dart';
 
 class BinaryTreeSort {
-   dynamic root;
+  Node? root;
 
-  BinaryTreeSort(this.root);
+  BinaryTreeSort({this.root});
 
-  add(int data) {
-    int? node = root;
-    if (node == null) {
-      root = Node(data: data);
+  addNode(int dataReceived) {
+    Node? newNode = root;
+
+    if (newNode == null) {
+      root = Node(dataReceived);
+      return;
+    } else {
+      
+      searchThree(Node? node) {
+        
+        if (dataReceived < node!.data) {
+          
+          if (node.left != null) {
+            return searchThree(node.left);
+          }
+          
+          return node.left ??= Node(dataReceived);
+        } else if (dataReceived > node.data) {
+          
+          if (node.right != null) {
+            return searchThree(node.right);
+          }
+          
+          return node.right ??= Node(dataReceived);
+        }
+      }
+
+      searchThree(newNode);
     }
+  }
+
+
+  findMinimumValue() {
+
+    Node? currentNode = root;
+
+    while (currentNode!.left != null) {
+
+      currentNode = currentNode.left;
+    }
+    print('minimum> ${currentNode.data}');
+    return currentNode.data;
+  }
+
+  findMaximumValue() {
+
+    Node? currentNode = root;
+
+    while (currentNode!.right != null) {
+
+      currentNode = currentNode.right;
+    }
+    print('maximum> ${currentNode.data}');
+    return currentNode.data;
   }
 }

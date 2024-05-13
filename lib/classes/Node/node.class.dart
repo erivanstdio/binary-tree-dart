@@ -1,7 +1,7 @@
 class Node {
-  int? data;
-  int? left;
-  int? right;
+  int data;
+  dynamic left;
+  dynamic right;
 
-  Node({this.data, this.left, this.right}); 
+  Node(this.data, {this.left, this.right}); 
 }

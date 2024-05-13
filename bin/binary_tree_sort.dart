@@ -1,10 +1,19 @@
 
-import 'package:dart_application_1/classes/BinaryTreeSort/binary_tree_sort.class.dart';
+import 'package:binary_tree_sort/classes/BinaryTreeSort/binary_tree_sort.class.dart';
 
 void main() {
 
-  BinaryTreeSort rootExample = BinaryTreeSort(10);
+  BinaryTreeSort binaryTree = BinaryTreeSort();
   
+  binaryTree.addNode(10);
+  binaryTree.addNode(20);
+  binaryTree.addNode(5);
+  binaryTree.addNode(3);
+  binaryTree.addNode(17);
+  binaryTree.addNode(50);
+  binaryTree.addNode(60);
 
-  print('BTS root> ${rootExample.root}');
+  binaryTree.findMinimumValue();
+  binaryTree.findMaximumValue();
+  
 }
