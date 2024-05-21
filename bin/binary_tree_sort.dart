@@ -15,5 +15,6 @@ void main() {
 
   binaryTree.findMinimumValue();
   binaryTree.findMaximumValue();
+  binaryTree.findValue(7);
   
 }

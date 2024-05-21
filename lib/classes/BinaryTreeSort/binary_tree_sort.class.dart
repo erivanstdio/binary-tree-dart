@@ -60,4 +60,29 @@ class BinaryTreeSort {
     print('maximum> ${currentNode.data}');
     return currentNode.data;
   }
+
+  findValue(data) {
+
+    Node? currentNode = root;
+    
+    while (currentNode!.data != data) {
+      
+      if (data < currentNode.data) {
+        
+        currentNode = currentNode.left;
+      } else {
+        
+        currentNode = currentNode.right;
+      }
+      
+      if (currentNode == null) {
+        
+        print('Could not find any node with this value.');
+        return null;
+      }  
+    }
+
+    print('found node> ${currentNode.data}');
+    return currentNode;
+  }
 }
